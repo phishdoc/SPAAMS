@@ -28,7 +28,7 @@ NOTE: Check each file to modify input/output filepaths!
 4. (optional) Run ``analysis/TonleSap_Flux_Calc.R`` for flux calculations from Horne et al. (*in progress*) 
 
 ## Figure Creation
-The SPAAMS pipeline exports a standard set of figures that are informative
+The SPAAMS pipeline exports a standard set of informative figures. Code in ``paper_scripts`` are individual scripts which created figures used in Horne et al. (*in progress*).
 
 ## Dependencies
 * Windows OS (for .vbs COM scripts)
@@ -72,8 +72,7 @@ Links for source downloads here: [maptools](https://cran.r-project.org/src/contr
 |   `-- Gantt_chart_dates.R
 |-- preprocessing
 |   |-- ev2exports.vbs
-|   |-- raw2ev.R
-|   `-- README.md
+|   `-- raw2ev.R
 `-- README.md
 ```
 
