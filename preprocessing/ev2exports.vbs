@@ -35,9 +35,9 @@ option explicit
 
 
 'LOCATIONS for STATIONARY Bottom-Deployed echosounder
-Const InputEVFilePath   =  "Z:\fishproj\Cambodia Dai project\Analytic\Analytic Products\TS2022-23 EV Files\"    'where the existing EV files are located
-Const OutputEvFilePath  =  "Z:\fishproj\Cambodia Dai project\Analytic\Analytic Products\TS2022-23 Data Exports\"  'where to save a copy of the EV file that generated the export
-Const OutputExportPath  =  "Z:\fishproj\Cambodia Dai project\Analytic\Analytic Products\TS2022-23 Data Exports\"    'where to save the exported data and the exported .EVD file
+Const InputEVFilePath   =  "..\data\ev\"          'where the existing EV files are located
+Const OutputEvFilePath  =  "..\data\ev_exports\"  'where to save a copy of the EV file that generated the export
+Const OutputExportPath  =  "..\data\ev_exports\"  'where to save the exported data and the exported .EVD file
 
 
 'TIME INTERVAL to EXPORT (in minutes: 0.1 to 9999)

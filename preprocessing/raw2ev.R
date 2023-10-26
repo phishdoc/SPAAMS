@@ -191,8 +191,8 @@ requireNamespace("dplyr")                           #for working with dataframes
 requireNamespace("stringr")                         #needed for manipulating or testing strings
 requireNamespace("gtools")                          #used for sorting file names in (human) alpha order (i.e. file1, file2, file3 rather than file1, file10, file 11, file2, etc)
 #install.packages("devtools")                       #needed for forcing install of packages RDCOMclient and EchoviewR in R versions >4.0
-devtools::install_github("dkyleward/RDCOMClient")   #forces install of RDCOMclient
-devtools::install_github('AustralianAntarcticDivision/EchoviewR',ref='v1.0') #forces install of EchoviewR 
+devtools::install_github("omegahat/RDCOMClient")   #forces install of RDCOMclient
+devtools::install_github('AustralianAntarcticDivision/EchoviewR') #forces install of EchoviewR 
 library(RDCOMClient)                                #R requires RDCOMClient to talk to EV
 library(EchoviewR)                                  #needed for running Echoview
                                                     #LPM prefers to use requireNamespace, but for EchoviewR we'll just load it
@@ -377,8 +377,8 @@ pattern.time <- "-T"      # how will we identify the time string within the .raw
 
 #...............................................................................
 ### DEFINE LOCATION to FIND the INPUT .raw SIMRAD files to be placed in EV files
-DIR_rawFiles.stn2     <- ("Y:/Cambodia_Data/Cambodia 2022-23/stn2/")
-DIR_rawFiles.stn1    <- ("Y:/Cambodia_Data/Cambodia 2022-23/stn1/")
+DIR_rawFiles.stn2     <- ("../data/raw/stn2/")
+DIR_rawFiles.stn1    <- ("../data/raw/stn1/")
 # NOTE: If these paths don't exist, there is coding below to print an alert to the Console for the user
 #       and then terminate the script.
 
@@ -386,22 +386,22 @@ DIR_rawFiles.stn1    <- ("Y:/Cambodia_Data/Cambodia 2022-23/stn1/")
 ### DEFINE LOCATION and NAME of the .ecs CALIBRATION FILE
 # as of July 2021 - assumes one calibration file for each echosounder
 # as of July 2021 - assumes that the whole path including filename is stored in FILE_ecs.stn2 or stn1
-FILE_ecs.stn2  <- ("Z:/fishproj/Cambodia Dai project/Analytic/Calibration/Calibration TONLE/811 CAL TONLE Simrad EK80, ES80, WBAT, EKAuto or Kongsberg EA640.ecs")
-FILE_ecs.stn1 <- ("Z:/fishproj/Cambodia Dai project/Analytic/Calibration/Calibration TONLE/810 CAL TONLE Simrad EK80, ES80, WBAT, EKAuto or Kongsberg EA640.ecs")
+FILE_ecs.stn2  <- ("../data/raw/cal/cal.ecs")
+FILE_ecs.stn1 <- ("../data/raw/cal/cal.ecs")
 # NOTE: If these files don't exist, there is coding below to print an alert to the Console for the user
 #       and then terminate the script.
 
 #...............................................................................
 ### DEFINE LOCATION and NAME of the Echoview TEMPLATE FILE
 # as of July 2021 - assumes that the whole path including filename is stored in FILE_EVtemplate
-FILE_EVtemplate      <- ("Z:/fishproj/Cambodia Dai project/Analytic/Echoview template devel/current version/TonleSap_template_Universal.EV")
+FILE_EVtemplate      <- ("../data/ev/templates/template.EV")
 # NOTE: If this file doesn't exist, there is coding below to print an alert to the Console for the user
 #       and then terminate the script.
 
 
 #...............................................................................
 ### DEFINE LOCATION to SAVE the OUTPUT EV files 
-DIR_SaveEVFiles <- ("Z:/fishproj/Cambodia Dai project/Analytic/Analytic Products/TS2022-23 EV Files 15E and 3D/")
+DIR_SaveEVFiles <- ("../data/ev/")
 # NOTE: If this path doesn't exist, there is coding below that will create the DIR_dataFiles path
 #       and alert the user
 

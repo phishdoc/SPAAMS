@@ -10,11 +10,12 @@ Data was collected from Solar Powered Autonomous Acoustic Monitoring Stations (S
 
 **data** stores data used in the pipeline. The user can specify other data locations explicitly in the processing scripts.
 
-**figures** stores figures created by SPAAMS pipeline or paper scripts.
+**output** stores figures and data exports created by the SPAAMS pipeline or paper scripts.
 
 **paper_scripts** stores code used to create figures for Horne et al. (*in progress*)
 
-**preprocessing** stores R and VBS files used for processing .raw files into Echoview exports used in the pipeline.
+**preprocessing** stores R and VBS files used for processing .raw files into Echoview exports used in the pipeline.  
+Special thanks to Louise P McGarry, Ph.D, for the base scripts in this step!
 
 ## Using the SPAAMS Pipeline
 NOTE: Check each file to modify input/output filepaths!
