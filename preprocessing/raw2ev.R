@@ -377,8 +377,8 @@ pattern.time <- "-T"      # how will we identify the time string within the .raw
 
 #...............................................................................
 ### DEFINE LOCATION to FIND the INPUT .raw SIMRAD files to be placed in EV files
-DIR_rawFiles.stn2     <- ("../data/raw/stn2/")
-DIR_rawFiles.stn1    <- ("../data/raw/stn1/")
+DIR_rawFiles.stn2     <- ("PATH/TO/data/raw/stn2/")
+DIR_rawFiles.stn1    <- ("PATH/TO/data/raw/stn1/")
 # NOTE: If these paths don't exist, there is coding below to print an alert to the Console for the user
 #       and then terminate the script.
 
@@ -386,22 +386,22 @@ DIR_rawFiles.stn1    <- ("../data/raw/stn1/")
 ### DEFINE LOCATION and NAME of the .ecs CALIBRATION FILE
 # as of July 2021 - assumes one calibration file for each echosounder
 # as of July 2021 - assumes that the whole path including filename is stored in FILE_ecs.stn2 or stn1
-FILE_ecs.stn2  <- ("../data/raw/cal/cal.ecs")
-FILE_ecs.stn1 <- ("../data/raw/cal/cal.ecs")
+FILE_ecs.stn2  <- ("PATH/TO/data/raw/cal/cal_stn2.ecs")
+FILE_ecs.stn1 <- ("PATH/TO/data/raw/cal/cal_stn1.ecs")
 # NOTE: If these files don't exist, there is coding below to print an alert to the Console for the user
 #       and then terminate the script.
 
 #...............................................................................
 ### DEFINE LOCATION and NAME of the Echoview TEMPLATE FILE
 # as of July 2021 - assumes that the whole path including filename is stored in FILE_EVtemplate
-FILE_EVtemplate      <- ("../data/ev/templates/template.EV")
+FILE_EVtemplate      <- ("PATH/TO/data/ev/templates/template.EV")
 # NOTE: If this file doesn't exist, there is coding below to print an alert to the Console for the user
 #       and then terminate the script.
 
 
 #...............................................................................
 ### DEFINE LOCATION to SAVE the OUTPUT EV files 
-DIR_SaveEVFiles <- ("../data/ev/")
+DIR_SaveEVFiles <- ("PATH/TO/data/ev/")
 # NOTE: If this path doesn't exist, there is coding below that will create the DIR_dataFiles path
 #       and alert the user
 

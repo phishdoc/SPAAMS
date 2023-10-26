@@ -35,9 +35,9 @@ option explicit
 
 
 'LOCATIONS for STATIONARY Bottom-Deployed echosounder
-Const InputEVFilePath   =  "..\data\ev\"          'where the existing EV files are located
-Const OutputEvFilePath  =  "..\data\ev_exports\"  'where to save a copy of the EV file that generated the export
-Const OutputExportPath  =  "..\data\ev_exports\"  'where to save the exported data and the exported .EVD file
+Const InputEVFilePath   =  "PATH\TO\data\ev\"          'where the existing EV files are located
+Const OutputEvFilePath  =  "PATH\TO\data\ev_exports\"  'where to save a copy of the EV file that generated the export
+Const OutputExportPath  =  "PATH\TO\data\ev_exports\"  'where to save the exported data and the exported .EVD file
 
 
 'TIME INTERVAL to EXPORT (in minutes: 0.1 to 9999)
