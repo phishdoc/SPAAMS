@@ -56,14 +56,22 @@ Links for source downloads here: [maptools](https://cran.r-project.org/src/contr
 ## Directory Structure
 ```
 .
-|-- figures
-|   `-- .gitignore
+|-- output
 |-- analysis
 |   |-- TonleSap_OGIVE_CDF_PDF.R
 |   |-- TonleSap_Bottom_Line_Compilation.R
 |   |-- TonleSap_Target_Strength.R
 |   |-- TonleSap_Flux_Calc.R
 |   `-- RUNME_pipeline.R
+|-- data
+|   |-- ev
+|   |   `-- templates
+|   |-- ev_exports
+|   |-- raw
+|   |   |-- cal
+|   |   |-- stn1
+|   |   `-- stn2
+|   `-- transects
 |-- paper_scripts
 |   |-- analysis_paper_final_plots_script.R
 |   |-- Figure_7_TS_12_Hour_Stacked.R
