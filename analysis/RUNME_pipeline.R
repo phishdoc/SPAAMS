@@ -22,6 +22,7 @@ dir_r_scripts = "PATH/TO/analysis/"
 input_all_data = "PATH/TO/data/ev_exports/"
 data_analysis_output = "PATH/TO/output/"
 
+# modify full moon dates as needed
 full_moon_dates<- as.Date(c('2023-01-06', '2023-02-05'))
 
 prefix = "TS2022-23"  # prefix for output from the pipeline
