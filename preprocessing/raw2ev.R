@@ -386,8 +386,8 @@ DIR_rawFiles.stn1    <- ("PATH/TO/data/raw/stn1/")
 ### DEFINE LOCATION and NAME of the .ecs CALIBRATION FILE
 # as of July 2021 - assumes one calibration file for each echosounder
 # as of July 2021 - assumes that the whole path including filename is stored in FILE_ecs.stn2 or stn1
-FILE_ecs.stn2  <- ("PATH/TO/data/raw/cal/cal_stn2.ecs")
-FILE_ecs.stn1 <- ("PATH/TO/data/raw/cal/cal_stn1.ecs")
+FILE_ecs.stn2  <- ("PATH/TO/data/raw/cal/FILE_stn2.ecs")
+FILE_ecs.stn1 <- ("PATH/TO/data/raw/cal/FILE_stn1.ecs")
 # NOTE: If these files don't exist, there is coding below to print an alert to the Console for the user
 #       and then terminate the script.
 
