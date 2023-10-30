@@ -14,9 +14,6 @@ NOTE: Change ``PATH/TO/`` substrings in ``raw2ev.R`` and ``ev2exports.vbs`` to a
 2. Run (double-click) ``ev2exports.vbs`` to generate Echoview exports and pull relevant data from Echoview files.
 3. Follow steps in ``SPAAMS/analysis`` to run the SPAAMS pipeline.
 
-## Figure Creation
-The SPAAMS pipeline exports a standard set of informative figures. Code in ``paper_scripts`` are individual scripts which created figures used in Horne et al. (*in progress*).
-
 ## Dependencies
 * Windows OS (for .vbs COM scripts)
 * Echoview
