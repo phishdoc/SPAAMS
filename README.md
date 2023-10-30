@@ -26,7 +26,7 @@ NOTE: Change ``PATH/TO/`` substrings in ``preprocessing/raw2ev.R``, ``preprocess
 3. Run ``analysis/RUNME_pipeline.R`` which takes the data products from ``preprocessing`` and performs a standard suite of acoustic analyses.  
 ``RUNME_pipeline.R`` drives the data pipeline (i.e, automatically calls subsequent steps):  
 ``TonleSap_OGIVE_CDF_PDF.R`` --> ``TonleSap_Bottom_Line_Compilation.R`` --> ``TonleSap_Target_Strength.R``
-4. (optional) Run ``analysis/TonleSap_Flux_Calc.R`` for flux calculations from Horne et al. (*in progress*) 
+4. (optional) Run ``analysis/TonleSap_Flux_Calc.R`` for flux calculations from Horne et al. (*in progress*).
 
 ## Figure Creation
 The SPAAMS pipeline exports a standard set of informative figures. Code in ``paper_scripts`` are individual scripts which created figures used in Horne et al. (*in progress*).
@@ -43,6 +43,7 @@ The SPAAMS pipeline exports a standard set of informative figures. Code in ``pap
     * ggpubr
     * ggplot2
     * gtools
+    * hms
     * lubridate
     * plyr
     * qpcR
