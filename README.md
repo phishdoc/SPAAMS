@@ -75,12 +75,6 @@ Links for source downloads here: [maptools](https://cran.r-project.org/src/contr
 |   |   `-- stn2
 |   `-- transects
 |-- paper_scripts
-|   |-- analysis_paper_final_plots_script.R
-|   |-- Figure_7_TS_12_Hour_Stacked.R
-|   |-- Figure_10_TS_PDF_Script.R
-|   |-- flux_CDF_pw_regression_script.R
-|   |-- flux_sv_regression.R
-|   `-- Gantt_chart_dates.R
 |-- preprocessing
 |   |-- ev2exports.vbs
 |   |-- raw2ev.R
