@@ -90,37 +90,37 @@ reg_graph<- ggscatter(depth_stack, x = 'date_column', y = "x", color = "Dai", ad
                                              legend.direction = "vertical", legend.position = c(0.1,0.90))
 #plot(reg_graph)
 ggsave(filename = paste0(prefix,paste0(prefix,"_depth_comparison.png")), plot = reg_graph, width =10, height = 6, units = c("in"), dpi = 600)
-message("Exported depth comparison")
+message("Exported depth comparison: depth_comparison.png")
 
-depthline15<- lm(x ~ day, data = avg_depth_stn1)
-summarydl15<- summary(depthline15)
-capture.output(summarydl15, file = paste0(prefix,"_depthlinestn1_stat_output.txt"))
-coef(depthline15)[2]
+# depthline15<- lm(x ~ day, data = avg_depth_stn1)
+# summarydl15<- summary(depthline15)
+# capture.output(summarydl15, file = paste0(prefix,"_depthlinestn1_stat_output.txt"))
+# coef(depthline15)[2]
+# 
+# depthline3<- lm(x ~ day, data = avg_depth_stn2)
+# summarydl3<- summary(depthline3)
+# capture.output(summarydl3, file= paste0(prefix,"_depthlinestn2_stat_output.txt"))
+# coef(depthline3)[2]
+# 
+# depthline_stack<- lm(day ~ x + Dai + x:Dai, data = depth_stack)
+# summary(depthline_stack)
+# depth_aov<- aov(depthline_stack)
+# capture.output(depth_aov, file = paste0(prefix,"_depthline_comparison_stat_output.txt"))
+# 
+# write.csv(depth_stack, paste0(prefix,"_depth_stack.csv"), row.names = T)
 
-depthline3<- lm(x ~ day, data = avg_depth_stn2)
-summarydl3<- summary(depthline3)
-capture.output(summarydl3, file= paste0(prefix,"_depthlinestn2_stat_output.txt"))
-coef(depthline3)[2]
-
-depthline_stack<- lm(day ~ x + Dai + x:Dai, data = depth_stack)
-summary(depthline_stack)
-depth_aov<- aov(depthline_stack)
-capture.output(depth_aov, file = paste0(prefix,"_depthline_comparison_stat_output.txt"))
-
-write.csv(depth_stack, paste0(prefix,"_depth_stack.csv"), row.names = T)
-
-write.csv(avg_depth_stn1, paste0(prefix,"_avg_depth_stn1.csv"), row.names = T)
-message("Exported stn1 avg depth dataframe: avg_depth_stn1.csv")
-write.csv(avg_depth_stn2, paste0(prefix,"_avg_depth_stn2.csv"), row.names = T)
-message("Exported stn2 avg depth dataframe: avg_depth_stn2.csv")
-write.csv(depth_stn1, paste0(prefix,"_depth_stn1.csv"), row.names = T)
-message("Exported stn1 depth dataframe: depth_stn1.csv")
-write.csv(depth_stn2, paste0(prefix,"_depth_stn2.csv"), row.names = T)
-message("Exported stn2 depth dataframe: depth_stn2.csv")
-write.csv(week_avg_stn1, paste0(prefix,"_week_avg_stn1.csv"), row.names = T)
-message("Exported stn1 weekly avg depth dataframe: week_avg_stn1.csv")
-save.image(paste0(prefix,"_Bottom_Line_Compilation_Final.RData"))
-message("Exported workspace as TS2021-22_Bottom_Line_Compilation_Final.RData")
+# write.csv(avg_depth_stn1, paste0(prefix,"_avg_depth_stn1.csv"), row.names = T)
+# message("Exported stn1 avg depth dataframe: avg_depth_stn1.csv")
+# write.csv(avg_depth_stn2, paste0(prefix,"_avg_depth_stn2.csv"), row.names = T)
+# message("Exported stn2 avg depth dataframe: avg_depth_stn2.csv")
+# write.csv(depth_stn1, paste0(prefix,"_depth_stn1.csv"), row.names = T)
+# message("Exported stn1 depth dataframe: depth_stn1.csv")
+# write.csv(depth_stn2, paste0(prefix,"_depth_stn2.csv"), row.names = T)
+# message("Exported stn2 depth dataframe: depth_stn2.csv")
+# write.csv(week_avg_stn1, paste0(prefix,"_week_avg_stn1.csv"), row.names = T)
+# message("Exported stn1 weekly avg depth dataframe: week_avg_stn1.csv")
+# save.image(paste0(prefix,"_Bottom_Line_Compilation_Final.RData"))
+# message("Exported workspace as TS2021-22_Bottom_Line_Compilation_Final.RData")
 #{Sys.sleep(5)}
 message("Finished running script #2, running next script\n\n")
 #{Sys.sleep(5)}

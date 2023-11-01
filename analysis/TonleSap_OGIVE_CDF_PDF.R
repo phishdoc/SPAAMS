@@ -67,12 +67,12 @@ Sv_time_plot_stn1<- ggplot(daily_avg_stn1, aes(x = date_column, y = Sv_log, colo
   scale_x_date(date_breaks = '5 days', date_labels = '%b-%d') + #scale_color_manual(values = c('darkgrey', 'black')) +
   #scale_y_continuous(breaks = function(y) seq(floor(min(y, digits = 1)), ceiling(max(y, digits = 1)), by = 1)) +
   scale_y_continuous(limits = c(-75,-50, by =3)) +
-  labs(y = "Sv mean 12 Hour Avg (dB)", x = "Date") + labs(color = 'Time of Day') + theme_bw() +#ggtitle("2020-21 Dai 15E Sv mean 12 hour Day/Night") + 
+  labs(y = "Sv mean 12 Hour Avg (dB)", x = "Date") + labs(color = 'Time of Day') + theme_bw() +#ggtitle("2020-21 Stn1 Sv mean 12 hour Day/Night") + 
   theme(axis.text.x = element_text(), legend.position = c(0.1,0.90)) 
 #ggsave("Sv_12hour_Plot_stn1.pdf", plot = Sv_time_plot_stn1, width =10, height =6, units = c("in"), dpi = 600) #saves the graph as a pdf
 #plot(Sv_time_plot_stn1)
 ggsave(paste0(prefix,"_Sv_12hour_Plot_15Eonly.png"), plot = Sv_time_plot_stn1, width =10, height =6, units = c("in"), dpi = 600) #saves the graph as a png
-message("Exported stn1 12hour plot: Sv_12hour_Plot_15Eonly.png")
+message("Exported stn1 12hour plot: Sv_12hour_Plot_stn1_only.png")
 
 
 #new_row<- c('2021-01-28 18:00:00', 'Day', 0, 0, '2021-01-28', 'Peak', 59)
@@ -81,7 +81,7 @@ message("Exported stn1 12hour plot: Sv_12hour_Plot_15Eonly.png")
 Sv_time_plot_stn2<- ggplot(daily_avg_stn2, aes(x = date_column, y = Sv_log, color = DayNight)) + geom_point(size = 3, show.legend = T) + 
   geom_vline(xintercept = full_moon_dates, color = "black") +
   geom_vline(xintercept = (daily_avg_stn2$date_column[daily_avg_stn2$peak_status == "Peak"]), color = "black") +
-  labs(y = "Sv Mean 12 Hour Avg (dB)", x = "Date") + #ggtitle("Dai 3C Sv mean 12 hour Day/Night") +
+  labs(y = "Sv Mean 12 Hour Avg (dB)", x = "Date") + #ggtitle("Stn2 Sv mean 12 hour Day/Night") +
   scale_x_date(date_breaks = '5 days', date_labels = '%b-%d') + #scale_color_manual(values = c('darkgrey', 'black')) +
   #scale_y_continuous(breaks = function(y) seq(floor(min(y, digits = 1)), ceiling(max(y, digits = 1)), by = 1)) +
   scale_y_continuous(limits = c(-75,-50, by =3)) + labs(color = 'Time of Day') + theme_bw() +
@@ -89,13 +89,14 @@ Sv_time_plot_stn2<- ggplot(daily_avg_stn2, aes(x = date_column, y = Sv_log, colo
 #ggsave(prefix+"_Sv_12hour_Plot_stn2.pdf", plot = Sv_time_plot_stn2,  width =10, height =6, units = c("in"), dpi = 600) #saves the graph as a pdf
 #plot(Sv_time_plot_stn2)
 ggsave(paste0(prefix,"_Sv_12hour_Plot_Dai3C_only.png"), plot = Sv_time_plot_stn2,  width =10, height =6, units = c("in"), dpi = 600) #saves the graph as a png
-message("Exported stn2 12hour plot: Sv_12hour_Plot_Dai3C_only.png")
+message("Exported stn2 12hour plot: Sv_12hour_Plot_stn2_only.png")
 
 #HOURLY################################################################################
 
 Sv_hourly_stn1<- ggplot(exports_stn1, aes(x = Date_time, y = Sv_mean)) + geom_point() + 
   geom_vline(xintercept = (exports_stn1$date_column[exports_stn1$peak_status == "Peak"]), color = "darkgrey") +
-  geom_smooth(formula = y ~ x, method = loess, se = T) + labs(y = "Sv mean Hourly (dB)", x = "Date/Time") + ggtitle("Dai 15E Sv mean Hourly") +  
+  geom_smooth(formula = y ~ x, method = loess, se = T) + 
+  labs(y = "Sv mean Hourly (dB)", x = "Date/Time") + ggtitle("Stn1 Sv mean Hourly") +  
   scale_x_datetime(name = "Date/Time", breaks = c("1 week"), date_labels = "%b-%d") +
   scale_y_continuous(limits = c(-75,-50, by =3)) +
   #scale_y_continuous(breaks = function(y) seq(floor(min(y, digits = 1)), ceiling(max(y, digits = 1)), by = 1)) +
@@ -108,7 +109,7 @@ message("Exported hourly stn1 plot (png and pdf): Sv_Hourly_Plot_stn1.png Sv_Hou
 Sv_hourly_stn2<- ggplot(exports_stn2, aes(x = Date_time, y = Sv_mean)) + geom_point() + 
   geom_vline(xintercept = (exports_stn1$date_column[exports_stn1$peak_status == "Peak"]), color = "darkgrey") +
   geom_smooth(formula = y ~ x, method = loess, se = T) + 
-  labs(y = "Sv mean Hourly (dB)", x = "Date/Time") + ggtitle("Dai 3C Sv mean Hourly") +
+  labs(y = "Sv mean Hourly (dB)", x = "Date/Time") + ggtitle("Stn2 Sv mean Hourly") +
   scale_x_datetime(name = "Date/Time", breaks = c("1 week"), date_labels = "%b-%d") +
   scale_y_continuous(limits = c(-75,-50, by =3)) +
   #scale_y_continuous(breaks = function(y) seq(floor(min(y, digits = 1)), ceiling(max(y, digits = 1)), by = 1)) +
@@ -159,16 +160,16 @@ message("Exported hourly stn2 plot (png and pdf): Sv_Hourly_Plot_stn2.png Sv_Hou
 # message("Exported stn2 CDF plot (png and pdf): CDF_Plot_stn2.png CDF_Plot_stn2.pdf")
 
   
-write.csv(exports_stn1, paste0(prefix,"_Sv_exports_stn1.csv")) #saves the exports_stn1 dataframe as a .csv file for later viewing
-message("Exported stn1 dataframe: Sv_exports_stn1.csv")
-write.csv(exports_stn2, paste0(prefix,"_Sv_exports_stn2.csv")) #saves the exports_stn2 dataframe as a .csv file for later viewing
-message("Exported stn2 dataframe: Sv_exports_stn2.csv")
-write.csv(daily_avg_stn1, paste0(prefix,"_Sv_daily_avg_stn1.csv")) #saves the SV_daily_avg_stn1.csv dataframe as a .csv file for later viewing
-message("Exported daily avg stn1 dataframe: Sv_daily_avg_stn1.csv")
-write.csv(daily_avg_stn2, paste0(prefix,"_v_daily_avg_stn2.csv")) #saves the SV_daily_avg_stn2.csv dataframe as a .csv file for later viewing
-message("Exported daily avg stn2 dataframe: Sv_daily_avg_stn2.csv")
-save.image(paste0(prefix,"_OGIVE_CDF_PDF_Final.RData")) #saves the R workspace to a file for later viewing
-message("Exported workspace as TS2021-22_OGIVE_CDF_PDF_Final.RData")
+# write.csv(exports_stn1, paste0(prefix,"_Sv_exports_stn1.csv")) #saves the exports_stn1 dataframe as a .csv file for later viewing
+# message("Exported stn1 dataframe: Sv_exports_stn1.csv")
+# write.csv(exports_stn2, paste0(prefix,"_Sv_exports_stn2.csv")) #saves the exports_stn2 dataframe as a .csv file for later viewing
+# message("Exported stn2 dataframe: Sv_exports_stn2.csv")
+# write.csv(daily_avg_stn1, paste0(prefix,"_Sv_daily_avg_stn1.csv")) #saves the SV_daily_avg_stn1.csv dataframe as a .csv file for later viewing
+# message("Exported daily avg stn1 dataframe: Sv_daily_avg_stn1.csv")
+# write.csv(daily_avg_stn2, paste0(prefix,"_v_daily_avg_stn2.csv")) #saves the SV_daily_avg_stn2.csv dataframe as a .csv file for later viewing
+# message("Exported daily avg stn2 dataframe: Sv_daily_avg_stn2.csv")
+# save.image(paste0(prefix,"_OGIVE_CDF_PDF_Final.RData")) #saves the R workspace to a file for later viewing
+# message("Exported workspace as TS2021-22_OGIVE_CDF_PDF_Final.RData")
 
 #{Sys.sleep(5)} #causes the script to pause for 5 seconds
 message("Finished running script #1, runnng next script\n\n") #message about the next script to be run
