@@ -27,8 +27,8 @@ full_moon_dates<- as.Date(c('2023-01-06', '2023-02-05'))
 
 prefix = "TS2022-23"  # prefix for output from the pipeline
 
-# only required for flux calc
-input_transect_data = "PATH/TO/data/transects/"
+# Save dataframes and R images?
+SAVE_WKSPC = FALSE
 
 #----
 # Initiate SPAAMS pipeline
